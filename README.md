@@ -1,52 +1,22 @@
-# Bank Reviews Analysis – Task 1: Data Collection & Preprocessing
+## 📊 Preprocessing Summary
 
-## 📌 Objective
+Using the Python package **`google_play_scraper`**, we scraped **400 reviews for each of the three banks** — Commercial Bank of Ethiopia (CBE), Bank of Abyssinia (BOA), and Dashen Bank — totaling **1,200 reviews**.
 
-Scrape Google Play Store reviews for three banks, preprocess the data to prepare it for sentiment or other downstream analysis, and manage the project using Git and GitHub.
+After scraping, the following preprocessing steps were performed:
 
----
+1. **Duplicate Check**:
 
-## ✅ Task Overview
+   - 🔍 Found **10 duplicate reviews** based on the combination of `review`, `rating`, `date`, and `bank`.
+   - ✅ All duplicates were successfully removed.
 
-### Git Setup
+2. **Missing Data Check**:
 
-- Repository created and initialized with `.gitignore` and `requirements.txt`.
-- All development done in `task-1` branch with frequent, meaningful commits.
+   - 🔎 Checked for missing values in all key columns (`review`, `rating`, `date`, `bank`, `source`).
+   - ✅ **No missing values** were found in the dataset.
 
-### Web Scraping
+3. **Date Normalization**:
+   - All review dates were normalized to the standard format `YYYY-MM-DD` for consistency and ease of analysis.
 
-- Tool used: `google-play-scraper`
-- Scraped the following fields for each review:  
-  `review`, `rating`, `date`, `bank`, `source`
-- Target: **400+ reviews per bank** (total 1,200+ reviews)
+The cleaned dataset is saved as: `data/cleaned_reviews.csv`.
 
-#### 🔢 Number of Reviews Scraped per Bank
-
-| Bank      | Count    |
-| --------- | -------- |
-| CBE       | 400      |
-| BOA       | 400      |
-| Dashn     | 400      |
-| **Total** | **1200** |
-
----
-
-## 🧹 Preprocessing
-
-- Removed duplicates
-- Handled missing data
-- Normalized date format to `YYYY-MM-DD`
-
-### ✅ Missing Data Summary (Before Cleaning)
-
-| Column | Missing Values |
-| ------ | -------------- |
-| review | 0              |
-| rating | 0              |
-| date   | 0              |
-| bank   | 0              |
-| source | 0              |
-
-✔ **No missing values were found** – dataset was already clean.
-
----
+✅ Total final reviews after cleaning: **~1190** (depending on exact duplicates removed).
