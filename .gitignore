@@ -1,0 +1,6 @@
+# Ignore all data folders and files
+data/
+*.csv
+*.tsv
+*.xlsx
+*.json
