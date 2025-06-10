@@ -1,5 +1,6 @@
 import oracledb
 import os
+import os
 
 def get_connection():
     return oracledb.connect(
